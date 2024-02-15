@@ -16,13 +16,15 @@ import NewsCard from './componets/newscard';
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={{fontSize: 50}}>News</Text>
       <FlatList
         ListHeaderComponent={() => (
           <ScrollView horizontal showsVerticalScrollIndicator={false}>
             {news_banner.map(banerNews => (
               <Image
                 style={styles.bannerImage}
-                source={{uri: banerNews.imageUrl}}></Image>
+                source={{uri: banerNews.imageUrl}}
+                key={banerNews.id}></Image>
             ))}
           </ScrollView>
         )}
